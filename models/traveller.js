@@ -36,19 +36,7 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
   return total
 };
 
-//this method should return an array of strings. Each string should be a mode of transport. Each string should only be included in the array once. first, map this.journeys to get only the modes of transport. then, get rid of duplicates.
-// Traveller.prototype.getUniqueModesOfTransport = function () {
-//   let modesOfTransport = this.journeys.map(journey => journey.transport);
-//   let unique = modesOfTransport[0]
-//   for (const mode of modesOfTransport) {
-//     let index = modesOfTransport.indexOf(mode)
-//     if (index === unique) {
-//       modesOfTransport.splice(index, 1)
-//     }
-//
-//   }
-//   return modesOfTransport
-// };
+
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
 const modesOfTransport = this.journeys.map(journey => journey.transport);
@@ -60,61 +48,6 @@ const unique = (value, index, self) => {
 return modesOfTransport.filter(unique)
 
 };
-// const unique = (value, index, self) => {
-//   return self.indexOf(value) === index
-// }
-//
-// const ages = [26, 27, 26, 26, 28, 28, 29, 29, 30]
-// const uniqueAges = ages.filter(unique)
-
-// console.log(uniqueAges)
-
-// Park.prototype.removeBySpecies = function (species) {
-//   const newDinosaurs = [];
-//
-//   for (const dinosaur of this.dinosaurs) {
-//     if (dinosaur.species !== species) {
-//       newDinosaurs.push(dinosaur);
-//     }
-//   }
-//
-//   this.dinosaurs = newDinosaurs;
-
-
-// const index = this.dinosaurs.indexOf(dinosaur);
-// this.dinosaurs.splice(index, 1);
-//
-//
-// Park.prototype.findMostAttractiveDinosaur = function () {
-//   let mostAttractiveDino = this.dinosaurs[0];
-//
-//   for (const dino of this.dinosaurs) {
-//     if (dino.guestsAttractedPerDay > mostAttractiveDino.guestsAttractedPerDay) {
-//       mostAttractiveDino = dino;
-//     }
-//   }
-//
-//   return mostAttractiveDino;
-// }
-
-
-// Park.prototype.numberOfDinosaursByDiet = function () {
-//   const numberOfDinosaursByDiet = {};
-//
-//   for (const dinosaur of this.dinosaurs) {
-//     if (numberOfDinosaursByDiet[dinosaur.diet]) {
-//       numberOfDinosaursByDiet[dinosaur.diet] += 1;
-//     }
-//     else {
-//       numberOfDinosaursByDiet[dinosaur.diet] = 1;
-//     }
-//   }
-//
-//   return numberOfDinosaursByDiet;
-// }
-
-
-
 
 
 module.exports = Traveller;
