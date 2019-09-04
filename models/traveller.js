@@ -38,16 +38,28 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 
 
 
+// Traveller.prototype.getUniqueModesOfTransport = function () {
+// const modesOfTransport = this.journeys.map(journey => journey.transport);
+//
+// const unique = (value, index, self) => {
+//   return self.indexOf(value) === index
+// }
+//
+// return modesOfTransport.filter(unique)
+//
+// };
+
 Traveller.prototype.getUniqueModesOfTransport = function () {
-const modesOfTransport = this.journeys.map(journey => journey.transport);
+  const modesOfTransport = this.journeys.map(journey => journey.transport);
+  const unique = [];
+   modesOfTransport.filter((mode) => {
+    if (unique.includes(mode) === false) {
+      unique.push(mode);
+    }
+  })
+    return unique
+  };
 
-const unique = (value, index, self) => {
-  return self.indexOf(value) === index
-}
-
-return modesOfTransport.filter(unique)
-
-};
 
 
-module.exports = Traveller;
+  module.exports = Traveller;
